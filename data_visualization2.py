@@ -1,3 +1,11 @@
+import pandas as pd
+from pandas import Series,DataFrame
+titanic_df=pd.read_csv('C:/Users/unstableV/Desktop/titanic project/train.csv')
+titanic_df.head()
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
 fig =sns.FacetGrid(titanic_df,hue='Sex',aspect=4)
 fig.map(sns.kdeplot,'Age',shade=True)
 oldest=titanic_df['Age'].max()
